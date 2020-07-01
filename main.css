@@ -10,7 +10,7 @@
   --VeryLightGray: hsl(0, 0%, 98%);
   --White: hsl(0, 0%, 100%);
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -36,8 +36,10 @@
 }
 
 body {
-  font-family:lato;
-  font-size: 18px;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 h1 {
@@ -70,7 +72,7 @@ h4 {
 
 p {
   line-height: 24px;
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 20px;
   color: var(--GrayishBlue);
 }
@@ -85,11 +87,14 @@ ul {
 }
 
 .attribution {
-  font-size: 11px;
+  color: var(--GrayishBlue);
+  margin-top: 40px;
+  font-size: 12px;
+  font-weight: 700;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsla(0, 0%, 100%, 0.644);
 }
 
 header {
@@ -106,15 +111,60 @@ header nav {
   padding: 10px;
 }
 
-header nav .nav-links,
+
+
+header nav .nav-links {
+  display: none;
+  z-index: 555;
+  position: absolute;
+  box-shadow: 1px 1px 60px 1px var(--DarkBlue);
+  margin: 20px;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  text-align: center;
+  top: 100%;
+  background: #fff;
+  width: auto;
+}
+
+header nav .nav-links li{
+  margin: 40px;
+}
+
+header nav .nav-links a{
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--DarkBlue);
+}
+
+
 header nav .btn {
   display: none;
+}
+
+.backdrop{
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.514);
 }
 
 .burger {
   height: 25px;
   width: 40px;
   padding-right: 10px;
+  cursor: pointer;
+  /* animation: nav .3s ; */
+}
+
+nav>.active .line {
+  margin:1px;
+  background: #444;
+  height: 100%;
+  display: inline-block;
+  width: 2px;
 }
 
 .burger .line {
@@ -236,6 +286,11 @@ footer .btn {
   margin: 20px 0;
 }
 
+
+
+
+/* MEDIAQUERIE */
+
 @media screen and (min-width: 800px) {
   header {
     background-color: #fff;
@@ -284,39 +339,55 @@ footer .btn {
     max-width: 100%;
     height: auto;
   }
-
+  
   .hero > .container {
-    height: auto;
+    height: 100vh;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     padding-bottom: 50px;
   }
-
-  .hero {
-    background: url('images/bg-intro-desktop.svg') no-repeat center center/
-      cover;
+  
+  .hero{
+    background: url('images/bg-intro-desktop.svg') no-repeat 155% 100%;
+    background-size: 69% 100%;
+    height: 100%;
+    /* padding-top: 10vh; */
   }
-
+  
   .hero .image {
-    height: 100vh;
+    background: none;
+    /* width: 0%; */
+    /* position: absolute; */
+    height: 100%;
+    width: 55%;
+    bottom: 0;
+    margin-right: -15%;
     padding: 16px;
+    order: 2;
   }
 
   .hero .image img {
-    width: 800px;
+    width: 14400px;
     max-width: 100%;
     height: auto;
-    margin-top: 00px;
+    /* margin:auto; */
+    margin-top: auto;
   }
 
   .hero .desc {
     padding: 0 16px;
     margin-top: 40px;
     text-align: left;
+    width: 31%;
     height: 50%;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .row {
