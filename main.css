@@ -113,7 +113,7 @@ header nav {
 
 
 
-header nav .nav-links {
+header nav .nav-links{
   display: none;
   z-index: 555;
   position: absolute;
@@ -308,6 +308,25 @@ footer .btn {
   }
 
   header nav .nav-links {
+  display: block;
+  z-index: 555;
+  position: static;
+  box-shadow: none;
+  margin: 0px;
+  left: 0;
+  right: 0;
+  border-radius: 0px;
+  text-align: left;
+  top: 100%;
+  background: transparent;
+  /* width: ; */
+}
+
+header nav .nav-links li{
+  margin: 0px;
+}
+
+  header nav .nav-links {
     display: flex;
     flex-flow: row nowrap;
   }
@@ -315,6 +334,7 @@ footer .btn {
   header nav .nav-links a {
     margin: 10px;
     font-size: 16px;
+    color: var(--GrayishBlue);
   }
 
   header nav .btn {
